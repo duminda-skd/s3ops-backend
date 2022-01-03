@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  say-hello:
+  deploy-over-ssh:
     docker:
       - image: cimg/base:stable
     steps:
@@ -11,6 +11,6 @@ jobs:
           command: 'echo Hello, World!'
 
 workflows:
-  say-hello-workflow:
+  deploy-over-ssh-workflow:
     jobs:
-      - say-hello
+      - deploy-over-ssh
