@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: Deploy Over SSH
-          command: ssh -i ssh -i "ec2-amazon-linux-key.pem" ec2-user@ec2-3-141-201-207.us-east-2.compute.amazonaws.com /tmp/test_script.sh
+          command: ssh -oStrictHostKeyChecking=no -i ssh -i "ec2-amazon-linux-key.pem" ec2-user@ec2-3-141-201-207.us-east-2.compute.amazonaws.com /tmp/test_script.sh
 
 workflows:
   deploy-over-ssh-workflow:
