@@ -11,6 +11,7 @@ const s3 = new AWS.S3();
 
 // list objects
 async function getS3FileUrlsList() {
+  // added comment
   const bucketName = process.env.BUCKET_NAME;
   const bucketParams = { Bucket: bucketName };
   const region = process.env.REGION;
