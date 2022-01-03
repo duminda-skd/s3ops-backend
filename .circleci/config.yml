@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: 'Say hello'
+          name: Deploy Over SSH
           command: 'echo Hello, World!'
 
 workflows:
