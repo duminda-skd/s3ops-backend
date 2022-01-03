@@ -1,12 +1,10 @@
 const AWS = require('aws-sdk');
-const fs = require('fs');
-const path = require('path');
 const mime = require('mime-types');
 
 //configuring the AWS environment
 AWS.config.update({
-  accessKeyId: 'AKIAUNMMLSRQEIOB7XWP',
-  secretAccessKey: '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',
+  accessKeyId: process.env.access_key_id,
+  secretAccessKey: process.env.secret_access_key,
 });
 
 const s3 = new AWS.S3();
