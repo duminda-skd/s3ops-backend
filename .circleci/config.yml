@@ -15,7 +15,6 @@ workflows:
   deploy-dev-workflow:
     jobs:
       - deploy-dev:
-        filters:
-          branches:
-            only:
-              - dev
+          filters:
+            branches:
+              only: dev
