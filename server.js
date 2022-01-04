@@ -20,5 +20,5 @@ app.use(morgan('dev'));
 app.use(`/s3/objects`, router);
 
 app.listen(4000, () => {
-  console.log('server is running!!');
+  console.log('server is running');
 });
