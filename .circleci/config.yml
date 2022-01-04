@@ -4,6 +4,7 @@ jobs:
   deploy-over-ssh:
     docker:
       - image: cimg/base:stable
+
     steps:
       - checkout
       - run:
@@ -13,4 +14,8 @@ jobs:
 workflows:
   deploy-over-ssh-workflow:
     jobs:
-      - deploy-over-ssh
+      - deploy-over-ssh:
+        filters:
+          branches:
+            only:
+              - dev
