@@ -22,5 +22,5 @@ app.use(`/s3/objects/list`, s3OpsRoute);
 app.use(`/s3/objects/upload`, s3OpsRoute);
 
 app.listen(4000, () => {
-  console.log('server is running!!!');
+  console.log('server is running');
 });
