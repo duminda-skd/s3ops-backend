@@ -1,0 +1,21 @@
+version: 2.1
+
+jobs:
+  deploy-over-ssh:
+    docker:
+      - image: cimg/base:stable
+
+    steps:
+      - checkout
+      - run:
+          name: Deploy Over SSH
+          command: ssh -oStrictHostKeyChecking=no ec2-user@ec2-3-141-201-207.us-east-2.compute.amazonaws.com /usr/local/bin/deployment_script.sh
+
+workflows:
+  deploy-over-ssh-workflow:
+    jobs:
+      - deploy-over-ssh:
+        filters:
+          branches:
+            only:
+              - dev
