@@ -8,6 +8,7 @@ router.get('/check_keys', async (req, res) => {
     'process.env.secret_access_key :>> ',
     process.env.secret_access_key
   );
+  console.log('process.env.BUCKET_NAME :>> ', process.env.BUCKET_NAME);
   res.status(200).send('');
 });
 
