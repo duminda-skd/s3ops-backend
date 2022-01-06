@@ -10,9 +10,10 @@ jobs:
       - run:
           name: Deploy to dev over SSH
           environment:
+            AWS_EC2_USER: ec2-user
             AWS_EC2_IP: 3.145.197.120
             AWS_EC2_REGION: us-east-2
-          command: ssh -oStrictHostKeyChecking=no ec2-user@ec2-3-145-197-120.us-east-2.compute.amazonaws.com /usr/local/bin/backend_deployment_script.sh
+          command: ssh -oStrictHostKeyChecking=no $AWS_EC2_USER@ec2-3-145-197-120.us-east-2.compute.amazonaws.com /usr/local/bin/backend_deployment_script.sh
 
 workflows:
   deploy-dev-workflow:
