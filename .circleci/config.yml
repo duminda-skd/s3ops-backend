@@ -9,7 +9,7 @@ jobs:
       - checkout
       - run:
           name: Deploy to dev over SSH
-          command: ssh -oStrictHostKeyChecking=no ec2-user@ec2-3-141-201-207.us-east-2.compute.amazonaws.com /usr/local/bin/backend_deployment_script.sh
+          command: ssh -oStrictHostKeyChecking=no ec2-user@ec2-3-145-197-120.us-east-2.compute.amazonaws.com /usr/local/bin/backend_deployment_script.sh
 
 workflows:
   deploy-dev-workflow:
