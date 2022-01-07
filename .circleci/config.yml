@@ -1,6 +1,15 @@
 version: 2.1
 
 jobs:
+  test-dev:
+    docker:
+      - image: circleci/node:12.16
+    steps:
+      - checkout
+      - run: echo "Running tests"
+      - run: npm install
+      - run: npm test
+
   deploy-dev:
     docker:
       - image: cimg/base:stable
@@ -18,6 +27,7 @@ jobs:
 workflows:
   deploy-dev-workflow:
     jobs:
+      - test-dev
       - deploy-dev:
           filters:
             branches:
