@@ -23,7 +23,7 @@ jobs:
           name: Deploy to dev over SSH
           environment:
             AWS_EC2_USER: ec2-user
-            AWS_EC2_IP: 3-145-169-3
+            AWS_EC2_IP: 3-142-125-135
             AWS_EC2_REGION: us-east-2
           command: ssh -oStrictHostKeyChecking=no $AWS_EC2_USER@ec2-$AWS_EC2_IP.$AWS_EC2_REGION.compute.amazonaws.com /usr/local/bin/backend_deployment_script.sh
 
