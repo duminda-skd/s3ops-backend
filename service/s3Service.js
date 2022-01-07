@@ -12,14 +12,20 @@ const s3 = new AWS.S3();
 // list objects
 async function getS3FileUrlsList() {
   const bucketName = process.env.BUCKET_NAME;
+  const cloudfrontPrefix = process.env.CLOUDFRONT_PREFIX;
   const bucketParams = { Bucket: bucketName };
-  const region = process.env.REGION;
+  // const region = process.env.REGION;
 
   const request = s3.listObjects(bucketParams);
   const data = await request.promise();
 
-  const baseUrl = `https://${bucketName}.s3.${region}.amazonaws.com/`;
+  // cloudfront
+  const baseUrl = `http://${cloudfrontPrefix}.cloudfront.net/`;
   const objectUrlList = data.Contents.map((ob) => baseUrl + ob.Key);
+
+  // s3 bucket
+  // const baseUrl = `https://${bucketName}.s3.${region}.amazonaws.com/`;
+  // const objectUrlList = data.Contents.map((ob) => baseUrl + ob.Key);
 
   return objectUrlList;
 }
