@@ -4,6 +4,9 @@ jobs:
   test-dev:
     docker:
       - image: circleci/node:12.16
+    environment:
+      access_key_id: AKIAUNMMLSRQCEGVHOR5
+      secret_access_key: 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
     steps:
       - checkout
       - run: echo "Running tests"
