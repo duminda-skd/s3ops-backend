@@ -5,8 +5,8 @@ jobs:
     docker:
       - image: circleci/node:12.16
     environment:
-      access_key_id: AKIAUNMMLSRQCEGVHOR5
-      secret_access_key: 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
+      access_key_id: AKIAUXV3ETUI3ZZLTQ42
+      secret_access_key: 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
     steps:
       - checkout
       - run: echo "Running tests"
@@ -23,7 +23,7 @@ jobs:
           name: Deploy to dev over SSH
           environment:
             AWS_EC2_USER: ec2-user
-            AWS_EC2_IP: 3-145-169-3
+            AWS_EC2_IP: 18-218-186-217
             AWS_EC2_REGION: us-east-2
           command: ssh -oStrictHostKeyChecking=no $AWS_EC2_USER@ec2-$AWS_EC2_IP.$AWS_EC2_REGION.compute.amazonaws.com /usr/local/bin/backend_deployment_script.sh
 
