@@ -35,7 +35,7 @@ async function uploadFileToS3(args) {
   const { uploadedFile } = args;
 
   const params = {
-    Bucket: 's3-cc-demo',
+    Bucket: process.env.BUCKET_NAME,
     Body: uploadedFile.data,
     Key: uploadedFile.name,
     ContentType: mime.lookup(uploadedFile.name),
