@@ -19,4 +19,8 @@ router.post('/upload', async (req, res) => {
   res.send(`successfully uploaded. url: ${uploadedFileUrl}`);
 });
 
+router.options("/*", async (req, res) => {
+  res.status(200).send('Success');
+})
+
 module.exports = router;
