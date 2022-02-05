@@ -9,6 +9,7 @@ const app = express();
 
 // middleware
 app.use(cors());
+app.options('*', cors());  // enable pre-flight
 app.use(
   fileUpload({
     createParentPath: true,
