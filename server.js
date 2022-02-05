@@ -16,8 +16,6 @@ app.use(
 );
 app.use(morgan('dev'));
 
-router.all('*', cors());
-
 // routes
 app.use(`/s3/objects`, router);
 
